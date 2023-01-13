@@ -1,13 +1,49 @@
 project:
   type: website
+  output-dir: _site
+
+lang: zh-CN
 
 website:
   title: "verse"
+  repo-url: https://github.com/zhchenyang/verse
+  repo-actions: [edit, issue]
+  page-footer: 
+    left:  Render by [Quarto](https://quarto.org)
+    center:
+      - text: "关于"
+        href: about.qmd
+    right: 
+      - icon: github
+        href: https://github.com/zhchenyang/verse
+        aria-label: github repo
   navbar:
+    background: light
     left:
-      - href: index.qmd
-        text: Home
+      - text: "主页"
+        href: index.qmd
+      - text: "博客"
+        href: docs/blog/index.qmd
+      - text: "笔头"
+        href: docs/note/index.qmd
+      - text: "工具箱"
+        icon: tools
+        menu:
+          - text: "IDE"
+            icon: "keyboard"
+            href: docs/tools/ide/index.qmd
+      - text: TODO
+        href: docs/todo/index.qmd
       - about.qmd
+    sidebar:
+      - id: toolbox
+        title: "工具箱"
+        style: "floating"
+        collapse-level: 2
+        align: left
+        contents:
+          - docs/tools/index.qmd
+
 
 format:
   html:
